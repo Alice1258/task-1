@@ -1,0 +1,14 @@
+const int LED_Pin = 11;
+#define Potentiometer_Pin A1
+void setup()
+{
+  pinMode(LED_Pin,OUTPUT);
+  pinMode(Potentiometer_Pin,INPUT);
+}
+
+void loop()
+{
+  int PotentiometerValue = analogRead(Potentiometer_Pin);
+  int brightness = PotentiometerValue/5;
+  analogWrite(LED_Pin,brightness);
+}
